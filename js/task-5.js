@@ -1,5 +1,5 @@
 class Car {
-  // Write code under this line
+  
   static getSpecs({maxSpeed, speed, isOn, distance, price}) {
     return `maxSpeed: ${maxSpeed}, speed: ${speed}, isOn: ${isOn}, distance: ${distance}, price: ${price}` 
   }
@@ -24,14 +24,14 @@ class Car {
    this.speed = 0;
    }
    accelerate(value) {
-    if((this.speed + value) <= this.maxSpeed) {
+    if(this.speed + value < this.maxSpeed) {
     this.speed += value}
      else{this.speed = this.maxSpeed}
    }
    decelerate(value) {
-    if((this.speed + value) <= 0) {
-      this.speed = this.speed - value;
-    }
+    if(this.speed - value > 0) {
+      this.speed -= value;
+    } else{this.speed = 0;}
    }
    drive(hours) {
      if(this.turnOn) {
